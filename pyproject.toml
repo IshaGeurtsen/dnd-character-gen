@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "dnd_character_gen"
+authors = [{ name = "stevistickman" }]
+version = "0.0.1"
+description = "a tool to help create dnd characters"
+requires-python = ">=3.12"
+readme = "README.md"
+classifiers = [
+    "Private :: Do Not Upload",
+    "Programming Language :: Python :: 3",
+    "Development Status :: 1 - Planning",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/steviestickman/dnd-character-gen"
+"Bug Tracker" = "https://github.com/steviestickman/dnd-character-gen/issues"
+
+[tool.black]
+py312 = true
+include = '\.pyi?$'
+exclude = '''/(
+    \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+
+    # The following are specific to Black, you probably don't want those.
+    | blib2to3
+    | tests/data
+)/'''
