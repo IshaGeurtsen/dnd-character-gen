@@ -8,6 +8,8 @@ name = "pypi"
 [dev-packages]
 pre-commit = "*"
 build = "*"
+pyperclip = "*"
+tika = "*"
 
 [requires]
 python_version = "3.12"
