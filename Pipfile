@@ -10,6 +10,7 @@ pre-commit = "*"
 build = "*"
 pyperclip = "*"
 tika = "*"
+requests = "*"
 
 [requires]
 python_version = "3.12"

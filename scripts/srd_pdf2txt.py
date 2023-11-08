@@ -46,7 +46,7 @@ def improve_text(text):
 if __name__ == "__main__":
     cwd = Path.cwd()
 
-    srd = cwd / "doc" / "SRD_CC_v5.1.pdf"
+    srd = cwd / "doc" / "gen" / "SRD_CC_v5.1.pdf"
     srd_text = cwd / "doc" / "gen" / "SRD.txt"
 
     parsed = parser.from_file(fspath(srd))
@@ -67,6 +67,5 @@ if __name__ == "__main__":
     unkown = set(text) - known
     assert not unkown
 
-    srd_text.unlink()
-    with open(srd_text, "xb") as out:
+    with open(srd_text, "wb") as out:
         out.write(text.encode(encoding="utf-8"))
