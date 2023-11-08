@@ -11,6 +11,9 @@ build = "*"
 pyperclip = "*"
 tika = "*"
 requests = "*"
+mypy = "*"
+flake8 = "*"
+types-requests = "*"
 
 [requires]
 python_version = "3.12"

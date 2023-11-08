@@ -1,6 +1,6 @@
 from pathlib import Path
 from os import fspath
-from tika import parser
+from tika import parser  # type: ignore
 import re
 import string
 
@@ -25,7 +25,7 @@ translation_table = str.maketrans(
 )
 
 
-def improve_text(text):
+def improve_text(text: str) -> str:
     text = text.translate(translation_table)
     text = text.replace(chr(0x2026), "...")
     # remove a lot of empty newlines
