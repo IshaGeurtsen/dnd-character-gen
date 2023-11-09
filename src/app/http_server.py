@@ -81,8 +81,9 @@ def run(
     ip: Ip = Ip("localhost"),
     port: Port = Port(8000),
 ) -> NoReturn:
-    global static
-    static = cwd / "static"
+    global static, db
+    static = cwd / "src" / "static"
+    db = cwd / "data" / "character_database.db"
     server_address = ip, port
     httpd = server_class(server_address, handler_class)
     print(f"listening on http://{ip}:{port}")
@@ -95,3 +96,4 @@ def run(
 
 
 static: Path
+db: Path
