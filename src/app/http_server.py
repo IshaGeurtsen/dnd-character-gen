@@ -46,7 +46,6 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         parts = self.path.lstrip("/").split("/")
-        print(parts, self.path)
         match parts:
             case ["dynamic"]:
                 raise NotImplementedError
