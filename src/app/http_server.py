@@ -9,6 +9,9 @@ import sys
 from typing import NewType, Any, BinaryIO, cast
 from pathlib import Path
 from os import fspath
+from urllib.parse import parse_qs
+import sqlite3
+from uuid import uuid4
 
 Ip = NewType("Ip", str)
 Port = NewType("Port", int)
@@ -44,6 +47,12 @@ class Handler(BaseHTTPRequestHandler):
             cast(SimpleHTTPRequestHandler, self), path
         )
 
+    def redirect(self, code: HTTPStatus, path: str) -> None:
+        self.send_response(code)
+        self.send_header("Location", path)
+        self.end_headers()
+        self.flush_headers()
+
     def do_GET(self) -> None:
         parts = self.path.lstrip("/").split("/")
         match parts:
@@ -56,8 +65,10 @@ class Handler(BaseHTTPRequestHandler):
                 with (static / "favicon.png").open("rb") as doc:
                     self.send_document(HTTPStatus.OK, "image/png", doc)
             case ["static", *parts]:
+                path = static / "/".join(parts)
+                if path.is_dir() and (path / "index.html").is_file():
+                    path = path / "index.html"
                 try:
-                    path = static / "/".join(parts)
                     with path.open("rb") as doc:
                         self.send_document(
                             HTTPStatus.OK,
@@ -72,6 +83,32 @@ class Handler(BaseHTTPRequestHandler):
                 self.send_header("Location", "/static/")
                 self.end_headers()
                 self.flush_headers()
+
+    def do_POST(self) -> None:
+        if self.path == "/static/user_detail.html":
+            self.redirect(HTTPStatus.FOUND, "/static/signin.html")
+            data = self.rfile.read(int(self.headers["Content-Length"])).decode(
+                encoding="utf-8"
+            )
+            querry = parse_qs(data)
+            with sqlite3.Connection(db) as conn:
+                cursor = conn.cursor()
+                username = querry["username"][0]
+                result = cursor.execute(
+                    "SELECT name, id FROM user WHERE name=?", [username]
+                )
+                value = result.fetchone()
+                if value:
+                    username, userid = value
+                    self.log_message(f"found user {username}, signin in")
+                else:
+                    userid = uuid4()
+                    cursor.execute(
+                        "INSERT INTO user (id, name) VALUES (?, ?)",
+                        [userid.hex, username],
+                    )
+                    self.log_message(f"creating user {username}, signin in")
+                    conn.commit()
 
 
 def run(
