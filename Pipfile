@@ -4,13 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-
-[dev-packages]
-pre-commit = "*"
-build = "*"
+requests = "*"
 pyperclip = "*"
 tika = "*"
-requests = "*"
+
+[dev-packages]
+build = "*"
 mypy = "*"
 flake8 = "*"
 types-requests = "*"
