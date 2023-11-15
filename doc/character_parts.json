@@ -1,0 +1,112 @@
+{
+    "Primary": {
+        "ClassLevel": "ClassLevel",
+        "Background": "Background",
+        "PlayerName": "PlayerName",
+        "CharacterName": "CharacterName",
+        "Race": "Race ",
+        "Alignment": "Alignment",
+        "XP": "XP"
+    },
+    "BaseSkills": {
+        "STR": [
+            "STR",
+            "STRmod",
+            "ST Strength"
+        ],
+        "DEX": [
+            "DEX",
+            "DEXmod ",
+            "ST Dexterity"
+        ],
+        "CON": [
+            "CON",
+            "CONmod",
+            "ST Constitution"
+        ],
+        "INT": [
+            "INT",
+            "INTmod",
+            "ST Intelligence"
+        ],
+        "WIS": [
+            "WIS",
+            "WISmod",
+            "ST Wisdom"
+        ],
+        "CHA": [
+            "CHA",
+            "CHamod",
+            "ST Charisma"
+        ]
+    },
+    "QuickRef": {
+        "Inspiration": "Inspiration",
+        "ProfBonus": "ProfBonus",
+        "AC": "AC",
+        "Initiative": "Initiative",
+        "Speed": "Speed",
+        "HPMax": "HPMax",
+        "HPCurrent": "HPCurrent",
+        "HPTemp": "HPTemp",
+        "HDTotal": "HDTotal",
+        "HD": "HD",
+        "Passive": "Passive"
+    },
+    "Skills": {
+        "Acrobatics": "Acrobatics",
+        "Animal": "Animal",
+        "Athletics": "Athletics",
+        "Deception": "Deception ",
+        "History": "History ",
+        "Insight": "Insight",
+        "Intimidation": "Intimidation",
+        "Arcana": "Arcana",
+        "Investigation": "Investigation ",
+        "Perception": "Perception ",
+        "Nature": "Nature",
+        "Performance": "Performance",
+        "Medicine": "Medicine",
+        "Religion": "Religion",
+        "Stealth": "Stealth ",
+        "Persuasion": "Persuasion",
+        "SleightofHand": "SleightofHand",
+        "Survival": "Survival"
+    },
+    "Weapons": [
+        {
+            "Wpn Name": "Wpn Name",
+            "Wpn AtkBonus": "Wpn1 AtkBonus",
+            "Wpn Damage": "Wpn1 Damage"
+        },
+        {
+            "Wpn Name": "Wpn Name 2",
+            "Wpn AtkBonus": "Wpn2 AtkBonus ",
+            "Wpn Damage": "Wpn2 Damage "
+        },
+        {
+            "Wpn Name": "Wpn Name 3",
+            "Wpn AtkBonus": "Wpn3 AtkBonus  ",
+            "Wpn Damage": "Wpn3 Damage "
+        }
+    ],
+    "Personality": {
+        "PersonalityTraits": "PersonalityTraits ",
+        "Ideals": "Ideals",
+        "Bonds": "Bonds",
+        "Flaws": "Flaws"
+    },
+    "FreeFields": {
+        "ProficienciesLang": "ProficienciesLang",
+        "Features and Traits": "Features and Traits",
+        "AttacksSpellcasting": "AttacksSpellcasting",
+        "Equipment": "Equipment"
+    },
+    "Purse": {
+        "CP": "CP",
+        "SP": "SP",
+        "EP": "EP",
+        "GP": "GP",
+        "PP": "PP"
+    }
+}
