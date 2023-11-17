@@ -5,24 +5,13 @@ import sqlite3
 
 from app.http_server import run, Handler
 
-tables = {
-    "user": "CREATE TABLE user(id, name)",
-}
-
 
 def create_tables(cwd: Path) -> None:
     db_path = cwd / "data" / "character_database.db"
     connection = sqlite3.Connection(db_path)
     cur = connection.cursor()
-    sqlite_master = cur.execute("SELECT name, sql FROM sqlite_master")
-    stored_tables = dict(sqlite_master.fetchall())
-    for table_name, sql in tables.items():
-        if table_name in stored_tables and sql == stored_tables[table_name]:
-            continue
-        elif table_name in stored_tables and sql != stored_tables[table_name]:
-            raise ValueError(f"migration needed for {table_name}")
-        else:
-            cur.execute(sql)
+    script = cwd / "src" / "create_tables.sql"
+    cur.executescript(script.read_text())
     connection.commit()
 
 

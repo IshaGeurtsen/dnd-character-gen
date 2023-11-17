@@ -1,5 +1,5 @@
 {
-    "Primary": {
+    "PrimaryInfo": {
         "ClassLevel": "ClassLevel",
         "Background": "Background",
         "PlayerName": "PlayerName",
@@ -75,30 +75,28 @@
     },
     "Weapons": [
         {
-            "Wpn Name": "Wpn Name",
-            "Wpn AtkBonus": "Wpn1 AtkBonus",
-            "Wpn Damage": "Wpn1 Damage"
+            "Name": "Wpn Name",
+            "AtkBonus": "Wpn1 AtkBonus",
+            "Damage": "Wpn1 Damage"
         },
         {
-            "Wpn Name": "Wpn Name 2",
-            "Wpn AtkBonus": "Wpn2 AtkBonus ",
-            "Wpn Damage": "Wpn2 Damage "
+            "Name": "Wpn Name 2",
+            "AtkBonus": "Wpn2 AtkBonus ",
+            "Damage": "Wpn2 Damage "
         },
         {
-            "Wpn Name": "Wpn Name 3",
-            "Wpn AtkBonus": "Wpn3 AtkBonus  ",
-            "Wpn Damage": "Wpn3 Damage "
+            "Name": "Wpn Name 3",
+            "AtkBonus": "Wpn3 AtkBonus  ",
+            "Damage": "Wpn3 Damage "
         }
     ],
-    "Personality": {
+    "FreeFields": {
         "PersonalityTraits": "PersonalityTraits ",
         "Ideals": "Ideals",
         "Bonds": "Bonds",
-        "Flaws": "Flaws"
-    },
-    "FreeFields": {
+        "Flaws": "Flaws",
         "ProficienciesLang": "ProficienciesLang",
-        "Features and Traits": "Features and Traits",
+        "FeaturesAndTraits": "Features and Traits",
         "AttacksSpellcasting": "AttacksSpellcasting",
         "Equipment": "Equipment"
     },
